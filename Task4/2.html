@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script>
+        // function Electronika(id, name, price, count) {
+
+
+        //     this.id = id;
+        //     this.name = name;
+        //     this.price = price;
+        //     this.count = count;
+
+
+        // }
+
+        // noutebook = new Electronika('1', 'Ноутбук Lenovo', 18000, 3)
+        // fotocamera = new Electronika('2', 'Фотокамера Nikon', 25000, 4)
+        // tablet = new Electronika('3', 'Apple ipad', 35000, 1)
+
+        // var product = [noutebook, fotocamera, tablet];
+
+
+
+        const noutebook = {
+            id: '1',
+            name: 'Ноутбук Lenovo',
+            price: 18000,
+            count: 3
+
+        };
+        const fotocamera = {
+            id: '2',
+            name: 'Фотокамера Nikon',
+            price: 25000,
+            count: 4
+
+        };
+        const tablet = {
+            id: '3',
+            name: 'Apple ipad',
+            price: 35000,
+            count: 1
+
+        };
+
+        const basket = {
+            sum: 0,
+            goods: {},
+            sumBasket: function () {
+                let sum = 0;
+                for (var key in this.goods) {
+                    const elem = this.goods[key]; // получить товар по ключу
+                    sum += elem.count * elem.price;
+                }
+                this.sum = sum; // запись свойста
+                return sum;
+            }
+        };
+
+        basket.goods = {
+            noutebook,
+            fotocamera,
+            tablet
+        };
+
+        basket.sumBasket();
+
+        console.log(basket.sum);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
